@@ -32,7 +32,7 @@
 				<p:layoutUnit position = "center">
 				
 					<!-- Definição do painel contêiner -->
-					<p:panel header = "Feirantes - Listagem">
+					<p:panel header = "Feirantes - Listagem" styleClass="panel">
 					
 					<!-- Botão "Novo" para manter feirante -->
 					<f:facet name = "header">
@@ -112,7 +112,7 @@
 			</p:column>
 			<p:column>
 				<p:calendar id="data"
-					value="#{feiranteFrequenciaBean.frequencia.data}" size="10" locale="pt_BR" />
+					value="#{feiranteFrequenciaBean.frequencia.data}" required = "true" size="10" locale="pt_BR" />
 			</p:column>	
 					
 				<p:dataTable id = "tabelaFrequenciaRegistro" emptyMessage = "Nenhum registro encontrado." 

@@ -196,6 +196,11 @@ public class FeiranteBean implements Serializable{
 			Map<String, Object> parametros = new HashMap<>();
 			//Realiza a conexão com o Banco
 			Connection conexao = HibernateUtil.getConexao();
+			
+			//passa o caminho da imagem  (logo)
+			InputStream logo = getClass().getResourceAsStream("/resources/images/logo.png");
+			parametros.put("logo", logo);
+			
 			//Recebe um relatório populado
 			JasperPrint relatorio = JasperFillManager.fillReport(caminho, parametros, conexao);
 			//Habilita a impressão

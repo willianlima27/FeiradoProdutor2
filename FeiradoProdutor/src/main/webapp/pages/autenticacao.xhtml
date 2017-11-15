@@ -10,9 +10,10 @@
 	<h:outputStylesheet library="css" name="style.css" />
 	<title>Autenticação</title>
 </h:head>
-<h:body>
+<h:body style="background-color: #13334D">
 	<p:growl id="mensagem" />
 
+	<h:graphicImage style="margin-left:450px; margin-top:10%; max-width:200px;" library="images" name="logo2.png" />
 	<p:dialog header="Autenticação" closable="false" draggable="false"
 		resizable="false" modal="true" visible="true">
 		<h:form>
@@ -28,7 +29,7 @@
 					value="#{autenticacaoBean.usuario.senha}" />
 			</h:panelGrid>
 
-			<h:panelGrid columns="1">
+			<h:panelGrid columns="2" style="text-align:center">
 				<p:commandButton value="Entrar" update=":mensagem"
 					actionListener="#{autenticacaoBean.autenticar}" />
 			</h:panelGrid>

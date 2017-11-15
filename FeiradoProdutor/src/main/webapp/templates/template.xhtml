@@ -12,17 +12,16 @@
 	<h:outputStylesheet library="css" name="style.css" />
 
 </h:head>
-<h:body>
 
 	<!-- 	Cabeçalho da Página -->
 	<header>
-		<div style="float: left;">
-			<h:link outcome="/Home">
-				<h:graphicImage library="images" name="logo.png" />
+		<div style="float: left">
+			<h:link outcome="/pages/feirante">
+				<h:graphicImage library="images" name="logo2.png" style="max-width:150px" />
 			</h:link>
 		</div>
 		<!-- 	MenuBar  -->
-		<div style="float: right; margin-right: 90px; margin-top: 12px;">	
+		<div class="topo">	
 			<h:form style="display: inline-block;">
 				<p:menubar styleClass="menu-sistema">					
 					<p:submenu label="Cadastros">
@@ -50,8 +49,6 @@
 				</p:menubar>
 			</h:form>
 		</div>
-		<div style="clear: both;"></div>
 	</header>
-
-</h:body>
+	
 </html>

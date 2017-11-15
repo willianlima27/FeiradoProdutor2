@@ -6,6 +6,7 @@
 		<![CDATA[cHVibGljLnByb2R1dG8gQVMgLDE0Myw1NCw4OWFlOWIzYy1hNDYwLTRiOGEtODYxZi04YzM1ZTRi
 YTFkODY7]]>
 	</property>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
 		<![CDATA[SELECT public.produto.codigo,
 	public.produto.genero,
@@ -19,19 +20,19 @@ FROM public.produto]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="60" splitType="Stretch">
+		<band height="66" splitType="Stretch">
 			<rectangle>
 				<reportElement mode="Transparent" x="0" y="-10" width="550" height="62" forecolor="#DBD9D5" backcolor="#F2EDE6" uuid="76f74696-fe41-493c-94a0-8f4768cb31d0"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="181" y="10" width="228" height="20" uuid="9dd10853-6227-4f37-a56f-79521213b9f4"/>
+				<reportElement x="181" y="10" width="228" height="20" forecolor="#13334D" uuid="9dd10853-6227-4f37-a56f-79521213b9f4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Listagem de Produtos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="406" y="30" width="68" height="14" uuid="2d920712-6d85-4458-b055-f9129232ffa5">
+				<reportElement x="406" y="30" width="68" height="14" forecolor="#13334D" uuid="2d920712-6d85-4458-b055-f9129232ffa5">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -40,7 +41,7 @@ FROM public.produto]]>
 				<text><![CDATA[Emitido em]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="474" y="30" width="76" height="14" uuid="05ba3c05-75cf-457f-99f3-ae5470406f41">
+				<reportElement x="474" y="30" width="76" height="14" forecolor="#13334D" uuid="05ba3c05-75cf-457f-99f3-ae5470406f41">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
@@ -49,33 +50,39 @@ FROM public.produto]]>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="472" y="10" width="61" height="20" uuid="487cfb29-94d3-40ab-a99e-2f32588f2401"/>
+				<reportElement x="472" y="10" width="61" height="20" forecolor="#13334D" uuid="487cfb29-94d3-40ab-a99e-2f32588f2401"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Pg: " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement key="" isPrintRepeatedValues="false" mode="Opaque" x="18" y="-7" width="90" height="55" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="4ad96e22-d2e4-4905-80d0-0590df424e30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<columnHeader>
 		<band height="32" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="-1" width="550" height="23" forecolor="#5A8194" backcolor="#5A8194" uuid="0f12c650-b85f-459f-9376-a4f570d6d74d"/>
+				<reportElement x="0" y="-1" width="550" height="23" forecolor="#13334D" backcolor="#13334D" uuid="0f12c650-b85f-459f-9376-a4f570d6d74d"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="290" y="1" width="130" height="20" uuid="940dc0bf-d379-4d06-8ceb-645b12c008cd"/>
+				<reportElement x="290" y="1" width="130" height="20" forecolor="#FFFFFF" uuid="940dc0bf-d379-4d06-8ceb-645b12c008cd"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Gênero]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="0" width="50" height="20" uuid="bcd217dc-b42d-4adb-9552-3b5e89981138"/>
+				<reportElement x="0" y="0" width="50" height="20" forecolor="#FFFFFF" uuid="bcd217dc-b42d-4adb-9552-3b5e89981138"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Codigo]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="60" y="1" width="100" height="20" uuid="0f6b3b46-f630-4de6-afe6-21fd7db46072"/>
+				<reportElement x="60" y="1" width="100" height="20" forecolor="#FFFFFF" uuid="0f6b3b46-f630-4de6-afe6-21fd7db46072"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
@@ -97,21 +104,21 @@ FROM public.produto]]>
 				</reportElement>
 			</rectangle>
 			<textField>
-				<reportElement x="0" y="0" width="50" height="20" uuid="0b4682e8-bb6f-4e96-83be-53789361a8b4"/>
+				<reportElement x="0" y="0" width="50" height="20" forecolor="#13334D" uuid="0b4682e8-bb6f-4e96-83be-53789361a8b4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="60" y="0" width="220" height="20" uuid="56945772-c963-424d-8bff-3d898eb35733"/>
+				<reportElement x="60" y="0" width="220" height="20" forecolor="#13334D" uuid="56945772-c963-424d-8bff-3d898eb35733"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nomeproduto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="289" y="0" width="190" height="20" uuid="3243631a-5316-4787-8387-ba4dd45c1c83"/>
+				<reportElement x="289" y="0" width="190" height="20" forecolor="#13334D" uuid="3243631a-5316-4787-8387-ba4dd45c1c83"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -122,14 +129,14 @@ FROM public.produto]]>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<textField>
-				<reportElement x="410" y="0" width="100" height="30" uuid="9eacc33e-41a6-4c8f-bef5-57756090d887"/>
+				<reportElement x="410" y="0" width="100" height="30" forecolor="#13334D" uuid="9eacc33e-41a6-4c8f-bef5-57756090d887"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="309" y="0" width="100" height="30" uuid="866b8569-77e6-4395-88fa-d3ccc013ddad"/>
+				<reportElement x="309" y="0" width="100" height="30" forecolor="#13334D" uuid="866b8569-77e6-4395-88fa-d3ccc013ddad"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>

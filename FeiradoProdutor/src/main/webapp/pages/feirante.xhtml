@@ -28,11 +28,11 @@
 			<p:growl id = "mensagem" />
 	
 			<!-- Definição do formulário de listagem -->
-			<h:form id = "formListagem">
+			<h:form  id = "formListagem">
 				<p:layoutUnit position = "center">
 				
 					<!-- Definição do painel contêiner -->
-					<p:panel header = "Feirantes - Listagem">
+					<p:panel  header = "Feirantes - Listagem" styleClass="panel">
 					
 					<!-- Botão "Novo" para manter feirante -->
 					<f:facet name = "header">
@@ -131,16 +131,16 @@
 				<!-- Linha "Nome Fantasia" -->
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" value = "Nome Fantasia:"/>
+						<p:outputLabel for="nomefantasia" styleClass="label" value = "Nome Fantasia:"/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputText style = "margin-left: 20px" maxlength = "30" size = "55" 
+						<p:inputText id="nomefantasia" style = "margin-left: 20px" required = "true" maxlength = "30" size = "55" 
 							value = "#{feiranteBean.feirante.nomeFantasia}"/>
 					</p:column>
 					<p:column>
-						<p:selectBooleanButton id="situacao" value="#{feiranteBean.feirante.situacao}" 
+						<p:selectBooleanButton id="situacao" value="#{feiranteBean.feirante.situacao}"
 							onLabel="Ativo" offLabel="Inativo" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:80px; margin-left:10px">		
 						</p:selectBooleanButton>
 					</p:column>
@@ -149,12 +149,12 @@
 				<!-- Linha Nome Completo -->
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" value = "Nome Completo:"/>
+						<p:outputLabel for="nomecompleto" styleClass="label" value = "Nome Completo:"/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputText style = "margin-left: 20px" maxlength = "50" size = "55" 
+						<p:inputText id="nomecompleto" style = "margin-left: 20px" required = "true" maxlength = "50" size = "55" 
 							value = "#{feiranteBean.feirante.nomeCompleto}"/>
 					</p:column>
 				</p:row>
@@ -162,20 +162,20 @@
 				<!-- Linha Documentos -->		
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" for = "cpf" value = "CPF:" />
+						<p:outputLabel for="cpf" styleClass="label" value = "CPF:" />
 					</p:column>
 					<p:column>
-						<p:outputLabel style = "margin-left: 145px; font-size: 12px" value = "RG: "/>
+						<p:outputLabel for="rg" style = "margin-left: 145px; font-size: 12px" value = "RG: "/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputMask style = "margin-left: 20px; width: 160px" required = "true" id = "cpf" 
+						<p:inputMask id="cpf" style = "margin-left: 20px; width: 160px" required = "true"
         					value = "#{feiranteBean.feirante.cpf}" mask = "999.999.999-99"/>
 					</p:column>
 					
 					<p:column>
-						<p:inputText style = "margin-left: 10px" maxlength = "20" size = "20" 
+						<p:inputText id="rg" style = "margin-left: 10px" required = "true" maxlength = "20" size = "20" 
 							value = "#{feiranteBean.feirante.rg}"/>
 					</p:column>
 				</p:row>
@@ -183,13 +183,13 @@
 				<!-- Linha "E-mail" -->
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" value = "Email:"/>
+						<p:outputLabel for="email" styleClass="label" value = "Email:"/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputText style = "margin-left: 20px" maxlength = "50" size = "40" 
-							value = "#{feiranteBean.feirante.email}"/>
+						<p:inputText id="email" style = "margin-left: 20px" required = "true" maxlength = "50" size = "40" 
+							value = "#{feiranteBean.feirante.email}" />
 					</p:column>
 				</p:row>
 
@@ -209,7 +209,7 @@
 					</p:column>
 					
 					<p:column>
-						<p:inputMask style = "margin-left: 10px; width: 120px" id = "celular" 
+						<p:inputMask style = "margin-left: 10px; width: 120px" required = "true" id = "celular" 
 							value = "#{feiranteBean.feirante.celular}" mask = "(99) 99999-9999"/>
 					</p:column>
 				</p:row>
@@ -219,19 +219,19 @@
 				<!-- Linha "Logradouro" -->
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" value = "Endereco: "/>
+						<p:outputLabel for="endereco" styleClass="label" value = "Endereco: "/>
 					</p:column>
 					<p:column>
-						<p:outputLabel style = "margin-left: 270px; font-size: 12px" value = "N°: "/>
+						<p:outputLabel for="numero" style = "margin-left: 270px; font-size: 12px;" value = "N°: "/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputText style = "margin-left: 20px" maxlength = "50" size = "40" 
+						<p:inputText id="endereco" style = "margin-left: 20px" required = "true" maxlength = "50" size = "40" 
 							value = "#{feiranteBean.feirante.logradouro}"/>
 					</p:column>
 					<p:column>
-						<p:inputText style = "margin-left: 10px" maxlength = "7" size = "7" 
+						<p:inputText id="numero" style = "margin-left: 10px" required = "true" maxlength = "7" size = "7" 
 							value = "#{feiranteBean.feirante.numero}"/>
 					</p:column>					
 				</p:row>
@@ -241,7 +241,7 @@
 						<p:outputLabel styleClass="label" value = "Complemento: "/>
 					</p:column>
 					<p:column>
-						<p:outputLabel style = "margin-left: 140px; font-size:12px" value = "Bairro: "/>
+						<p:outputLabel for="bairro" style = "margin-left: 140px; font-size:12px"  value = "Bairro: "/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -250,7 +250,7 @@
 							value = "#{feiranteBean.feirante.complemento}"/>
 					</p:column>
 					<p:column>
-						<p:inputText style = "margin-left: 10px" maxlength = "50" size = "25" 
+						<p:inputText id="bairro" style = "margin-left: 10px" required = "true" maxlength = "50" size = "25" 
 							value ="#{feiranteBean.feirante.bairro}"/>
 					</p:column>
 				</p:row>
@@ -258,12 +258,12 @@
 				<!-- Linha "Bairro" -->
 				<p:row>
 					<p:column>
-						<p:outputLabel styleClass="label" for = "cep" value = "CEP:"/>
+						<p:outputLabel for="cep" styleClass="label" value = "CEP:"/>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:inputMask style = "margin-left: 20px" id = "cep" 
+						<p:inputMask style = "margin-left: 20px" required = "true" id = "cep" 
 							value = "#{feiranteBean.feirante.cep}" mask = "99.999-999" size="20"/>
 					</p:column>
 				</p:row>
@@ -277,7 +277,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-        				<p:selectOneMenu style = "margin-left: 20px" id = "estado"  
+        				<p:selectOneMenu style = "margin-left: 20px" required = "true" id = "estado"  
         					filter = "true" converter = "omnifaces.SelectItemsConverter" value="#{feiranteBean.estado}">
         					
 							<f:selectItem noSelectionOption = "true"
@@ -306,14 +306,14 @@
         		<!-- Label "Sobre o feirante" -->
         		<p:row>
         			<p:column>
-       						<p:outputLabel style = "margin-left: 20px" value = "Sobre o Feirante:" />
+       						<p:outputLabel for="sobre" style = "margin-left: 20px" value = "Sobre o Feirante:" />
        				</p:column>
         		</p:row>
         	
         		<!-- Campo "Sobre o feirante" -->
        			<p:row>
        				<p:column>
-       					<p:inputTextarea value="#{feiranteBean.feirante.sobre}" style = "margin-left: 20px" rows = "3" cols = "70"
+       					<p:inputTextarea id="sobre" required = "true" value="#{feiranteBean.feirante.sobre}" style = "margin-left: 20px" rows = "3" cols = "70"
        					 autoResize="false"/>
        				</p:column>
        			</p:row>
@@ -421,7 +421,7 @@
 	</p:dialog>
 	</body>
 	<!-- Importação do Template -->
-	<p:layoutUnit position = "north">
+	<p:layoutUnit position="south">
 		<ui:include src = "/templates/rodape.xhtml" />
 	</p:layoutUnit>
 </html>

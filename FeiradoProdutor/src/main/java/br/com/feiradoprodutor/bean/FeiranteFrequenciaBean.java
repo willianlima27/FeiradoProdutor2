@@ -1,5 +1,6 @@
 package br.com.feiradoprodutor.bean;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.util.Date;
@@ -243,6 +244,11 @@ public class FeiranteFrequenciaBean implements Serializable{
 			parametros.put("data_fim", this.datafim);
 			//Realiza a conexão com o Banco
 			Connection conexao = HibernateUtil.getConexao();
+			
+			//passa o caminho da imagem  (logo)
+			InputStream logo = getClass().getResourceAsStream("/resources/images/logo.png");
+			parametros.put("logo", logo);
+			
 			//Recebe um relatório populado
 			JasperPrint relatorio = JasperFillManager.fillReport(caminho, parametros, conexao);
 			//Habilita a impressão

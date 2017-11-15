@@ -32,7 +32,7 @@
 				<p:layoutUnit position = "center">
 				
 					<!-- Definição do painel contêiner -->
-					<p:panel header = "Usuários - Listagem">
+					<p:panel header = "Usuários - Listagem" styleClass="panel">
 					
 					<!-- Botão "Novo" para manter feirante -->
 					<f:facet name = "header">
@@ -127,23 +127,23 @@
 
 				<!-- Linha "Nome Fantasia" -->
 				<p:row>
-					<p:outputLabel styleClass="label" value = "Nome:"/>
+					<p:outputLabel for="nome" styleClass="label" value = "Nome:"/>
 				</p:row>
 				<p:row>
-					<p:inputText style = "margin-left: 20px" maxlength = "30" size = "55" 
+					<p:inputText id="nome" style = "margin-left: 20px" required = "true" maxlength = "30" size = "55" 
 						value = "#{usuarioBean.usuario.nome}"/>
 				</p:row>
 				
-				<!-- Linha Nome Completo -->
+				<!-- Linha Email -->
 				<p:row>
-					<p:outputLabel styleClass="label" value = "email:"/>
+					<p:outputLabel for="email" styleClass="label" value = "email:"/>
 				</p:row>
 				<p:row>
-					<p:inputText style = "margin-left: 20px" maxlength = "50" size = "55" 
+					<p:inputText id="email" style = "margin-left: 20px" required = "true" maxlength = "50" size = "55" 
 						value = "#{usuarioBean.usuario.email}"/>
 				</p:row>
 				<p:row>
-					<p:outputLabel styleClass="label" for="senha" value="Senha:" />
+					<p:outputLabel for="senha" styleClass="label" for="senha" value="Senha:" />
 				</p:row>
 				
 				<p:row>

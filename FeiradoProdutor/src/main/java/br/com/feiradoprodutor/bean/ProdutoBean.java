@@ -1,5 +1,6 @@
 package br.com.feiradoprodutor.bean;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -125,6 +126,11 @@ public class ProdutoBean implements Serializable{
 			//Realiza a conexão com o Banco
 			Connection conexao = HibernateUtil.getConexao();
 			//Recebe um relatório populado
+			
+			//passa o caminho da imagem  (logo)
+			InputStream logo = getClass().getResourceAsStream("/resources/images/logo.png");
+			parametros.put("logo", logo);
+			
 			JasperPrint relatorio = JasperFillManager.fillReport(caminho, parametros, conexao);
 			//Habilita a impressão
 			JasperPrintManager.printReport(relatorio, true);
